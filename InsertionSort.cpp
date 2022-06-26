@@ -2,8 +2,8 @@
 
 using namespace std;
 
-class HeapSort {
-    
+class InsertionSort {
+
     private:
 
         /**
@@ -20,36 +20,6 @@ class HeapSort {
             arr[child] = aux;
 
         }
-
-        /**
-         * @brief Create heap in the array's given position
-         * 
-         * @param arr 
-         * @param root 
-         * @param _size 
-         */
-        void heapify(int arr[], int root, int _size) {
-
-            if(isEmpty(arr, _size)) {
-                cout << "Array is empty" << endl;
-                return;
-            }
-
-            int max = root;
-            int lchild = (root * 2) + 1;
-            int rchild = (root * 2) + 2;
-
-            // Select the biggest value in the given positions
-            max = ((lchild < _size) && (arr[lchild] > arr[max])) ? lchild : max;
-            max = ((rchild < _size) && (arr[rchild] > arr[max])) ? rchild : max;
-
-            if(max != root) {
-                swap(arr, root, max);
-                heapify(arr, max, _size);
-            }
-
-        }
-        
 
     public:
 
@@ -89,24 +59,27 @@ class HeapSort {
 
         }
 
-        /**
-         * @brief Sort the array
-         * 
-         * @param arr 
-         * @param _size 
-         */
         void sort(int arr[], int _size) {
 
-            int i;
-            // Build heap in the non-leaf elements
-            for(i = (_size / 2) - 1; i >= 0; i --) {
-                heapify(arr, i, _size);
+            if(isEmpty(arr, _size)) {
+                cout << "Array is empty" << endl;
+                return;
             }
+            
+            int cont, aux, i;
+            for(i = 0; i < _size; i ++) {
+                cont = 1;
+                aux = 0;
 
-            // Sort elements starting from root
-            for(i = _size - 1; i > 0; i --) {
-                swap(arr, 0, i);
-                heapify(arr, 0, i);
+                // Only swap when i != 0 and the previous value is bigger
+                if(i != 0) {
+                    while(i >= cont && arr[i - cont] > arr[i - aux]) {
+                        printArray(arr, _size);
+                        swap(arr, (i - aux), (i - cont));
+                        cont ++;
+                        aux ++;
+                    }
+                }
             }
 
         }
@@ -115,16 +88,16 @@ class HeapSort {
 
 int main() {
 
-    int i, _size, arr[10];
-    HeapSort* heapSort = new HeapSort();
+    int i, _size, arr[6];
+    InsertionSort* insertionSort = new InsertionSort();
     _size = sizeof(arr) / sizeof(arr[0]);
 
     for(i = 0; i < _size; i ++) {
         arr[i] = (rand() % 100) + 1;
     }
 
-    heapSort->sort(arr, _size);
-    heapSort->printArray(arr, _size);
+    insertionSort->sort(arr, _size);
+    insertionSort->printArray(arr, _size);
 
     return 0;
 

@@ -67,6 +67,11 @@ class BubbleSort {
          */
         void sort(int arr[], int _size) {
 
+            if(isEmpty(arr, _size)) {
+                cout << "Array is empty" << endl;
+                return;
+            }
+
             int cont = 0;
             do {
 
@@ -94,12 +99,8 @@ int main() {
         arr[i] = (rand() % 100) + 1;
     }
 
-    cout << "------------------------" << endl;
-
     bubbleSort->sort(arr, _size);
     bubbleSort->printArray(arr, _size);
-
-    return 0;
 
     return 0;
 
