@@ -59,6 +59,12 @@ class InsertionSort {
 
         }
 
+        /**
+         * @brief Sort the array
+         * 
+         * @param arr 
+         * @param _size 
+         */
         void sort(int arr[], int _size) {
 
             if(isEmpty(arr, _size)) {
