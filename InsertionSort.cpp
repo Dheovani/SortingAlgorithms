@@ -50,7 +50,7 @@ class InsertionSort {
         bool isEmpty(int arr[], int _size) {
 
             for(int i = 0; i < _size; i ++) {
-                if(arr[i] != NULL) {
+                if(arr[i]) {
                     return false;
                 }
             }
