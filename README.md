@@ -9,3 +9,5 @@ Até o momento, implementei:
    href="https://github.com/Dheovani/SortingAlgorithms/blob/main/HeapSort.cpp"> HeapSort </a>
 - <a target="_blank" rel="nofollow"
    href="https://github.com/Dheovani/SortingAlgorithms/blob/main/InsertionSort.cpp"> InsertionSort </a>
+- <a target="_blank" rel="nofollow"
+   href="https://github.com/Dheovani/SortingAlgorithms/blob/main/SelectionSort.cpp"> SelectionSort </a>
