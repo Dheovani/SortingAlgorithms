@@ -7,7 +7,7 @@ class InsertionSort : public Sort {
 
     public:
         /**
-         * @brief Sort the array
+         * @brief Organiza o array
          * 
          * @param arr 
          * @param _size 
@@ -23,7 +23,7 @@ class InsertionSort : public Sort {
                 cont = 1;
                 aux = 0;
 
-                // Only swap when i != 0 and the previous value is bigger
+                // Troca apernas quando i != 0 e o valor anterior for maior
                 if(i != 0) {
                     while(i >= cont && arr[i - cont] > arr[i - aux]) {
                         printArray(arr, _size);

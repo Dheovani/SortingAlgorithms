@@ -7,7 +7,7 @@ class SelectionSort : Sort {
 
     public:
         /**
-         * @brief Sort the array
+         * @brief Organiza o array
          * 
          * @param arr 
          * @param _size 

@@ -7,7 +7,7 @@ class HeapSort : public Sort {
     
     private:
         /**
-         * @brief Create heap in the array's given position
+         * @brief Criar os "heaps" nas posições determinadas
          * 
          * @param arr 
          * @param root 
@@ -23,7 +23,7 @@ class HeapSort : public Sort {
             int lchild = (root * 2) + 1;
             int rchild = (root * 2) + 2;
 
-            // Select the biggest value in the given positions
+            // Seleciona os maiores valores nas determiandas posições
             max = ((lchild < _size) && (arr[lchild] > arr[max])) ? lchild : max;
             max = ((rchild < _size) && (arr[rchild] > arr[max])) ? rchild : max;
 
@@ -36,19 +36,19 @@ class HeapSort : public Sort {
 
     public:
         /**
-         * @brief Sort the array
+         * @brief Organiza o array
          * 
          * @param arr 
          * @param _size 
          */
         void sortArray(int arr[], int _size) {
             int i;
-            // Build heap in the non-leaf elements
+            // Criar o heap nos elementos que não constituem as "folhas"
             for(i = (_size / 2) - 1; i >= 0; i --) {
                 heapify(arr, i, _size);
             }
 
-            // Sort elements starting from root
+            // Organizar o array a partir do fim
             for(i = _size - 1; i > 0; i --) {
                 swap(arr, 0, i);
                 heapify(arr, 0, i);

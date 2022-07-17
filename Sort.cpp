@@ -6,7 +6,7 @@ class Sort {
 
     protected:
         /**
-         * @brief Swap values in the array's given positions
+         * @brief Troca determinadas posições
          * 
          * @param arr 
          * @param root 
@@ -20,12 +20,12 @@ class Sort {
 
     public:
         /**
-         * Constructor
+         * Construtor
          */
         Sort() {}
 
         /**
-         * @brief Print values inside the array
+         * @brief Print dos valores doa array
          * 
          * @param arr 
          * @param _size 
@@ -39,12 +39,11 @@ class Sort {
         }
 
         /**
-         * @brief Check if array is empty
+         * @brief Verifica se o array está vazio
          * 
          * @param arr 
          * @param _size 
-         * @return true 
-         * @return false 
+         * @return bool 
          */
         bool isEmpty(int arr[], int _size) {
             for(int i = 0; i < _size; i ++) {
@@ -56,6 +55,6 @@ class Sort {
             return true;
         }
 
-        virtual void sortArray(int arr[], int _size);
+        virtual void sortArray(int arr[], int _size) = 0;
 
 };
