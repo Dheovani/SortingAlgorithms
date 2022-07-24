@@ -64,7 +64,7 @@ class MergeSort : public Sort {
          * @param start 
          * @param end 
          */
-        void mergeSort(int arr[], int start, int end) {
+        void mergeSort(int arr[], int const start, int const end) {
             if(start >= end) {
                 return;
             }

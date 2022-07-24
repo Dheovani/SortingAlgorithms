@@ -33,9 +33,9 @@ class Sort {
         void printArray(int arr[], int _size) {
             int i;
             for (i = 0; i < _size - 1; i ++) {
-                cout << i << ": " << arr[i] << ", ";
+                cout << arr[i] << ", ";
             }
-            cout << i << ": " << arr[i] << endl;
+            cout << arr[i] << endl;
         }
 
         /**
