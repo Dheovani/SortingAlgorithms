@@ -1,7 +1,5 @@
-#ifndef SORT_TESTER_H
-#define SORT_TESTER_H
-
 #include <iostream>
+#include "SortTester.h"
 #include "Sort.h"
 #include "BubbleSort.h"
 #include "HeapSort.h"
@@ -12,62 +10,55 @@
 
 using namespace std;
 
-class SortTester {
+void SortTester::sortTest(Sort* sorter) {
+	int* arr = new int[100];
 
-	public:
-		void sortTest(Sort* sorter) {
-			int* arr = new int[100];
+	for (int i = 0; i < 100; i++) {
+		*(arr + i) = rand() % 100;
+	}
 
-			for (int i = 0; i < 100; i++) {
-				*(arr + i) = rand() % 100;
-			}
+	cout << "Unsorted array:" << endl;
+	sorter->printArray(arr, 100);
+	cout << endl;
 
-			cout << "Unsorted array:" << endl;
-			sorter->printArray(arr, 100);
-			cout << endl;
+	cout << "Starting array sorting!" << endl;
+	sorter->sortArray(arr, 100);
+	cout << endl;
 
-			cout << "Starting array sorting!" << endl;
-			sorter->sortArray(arr, 100);
-			cout << endl;
+	cout << "Sorted array:" << endl;
+	sorter->printArray(arr, 100);
+	cout << endl;
 
-			cout << "Sorted array:" << endl;
-			sorter->printArray(arr, 100);
-			cout << endl;
+	delete[] arr;
+	arr = NULL;
+}
 
-			delete[] arr;
-			arr = NULL;
-		}
+void SortTester::bubbleSortTest() {
+	BubbleSort bubbleSort;
+	sortTest(&bubbleSort);
+}
 
-		void bubbleSortTest() {
-			BubbleSort bubbleSort;
-			sortTest(&bubbleSort);
-		}
+void SortTester::heapSortTest() {
+	HeapSort heapSort;
+	sortTest(&heapSort);
+}
 
-		void heapSortTest() {
-			HeapSort heapSort;
-			sortTest(&heapSort);
-		}
+void SortTester::mergeSortTest() {
+	MergeSort mergeSort;
+	sortTest(&mergeSort);
+}
 
-		void mergeSortTest() {
-			MergeSort mergeSort;
-			sortTest(&mergeSort);
-		}
+void SortTester::insertionSortTest() {
+	InsertionSort insertionSort;
+	sortTest(&insertionSort);
+}
 
-		void insertionSortTest() {
-			InsertionSort insertionSort;
-			sortTest(&insertionSort);
-		}
+void SortTester::quickSortTest() {
+	QuickSort quickSort;
+	sortTest(&quickSort);
+}
 
-		void quickSortTest() {
-			QuickSort quickSort;
-			sortTest(&quickSort);
-		}
-
-		void selectionSortTest() {
-			SelectionSort selectionSort;
-			sortTest(&selectionSort);
-		}
-
-};
-
-#endif
+void SortTester::selectionSortTest() {
+	SelectionSort selectionSort;
+	sortTest(&selectionSort);
+}

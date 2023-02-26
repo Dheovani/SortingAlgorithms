@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef SORT_H
-#define SORT_H
-
 using namespace std;
 
 class Sort {
@@ -40,5 +37,3 @@ class Sort {
         virtual void sortArray(int arr[], int _size) = 0;
 
 };
-
-#endif
